@@ -8,7 +8,7 @@ type Props = {
 };
 const Layout = ({ pageTitle, children }: Props) => {
   const data = useStaticQuery(graphql`
-    query getHomePageTitle {
+    query Layout {
       site(siteMetadata: { title: { eq: "My Portfolio" } }) {
         siteMetadata {
           description
