@@ -3,7 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import { container, title, siteTitle } from "./layout.module.css";
 
 type Props = {
-  pageTitle: string;
+  pageTitle?: string | null;
   children: React.ReactNode;
 };
 const Layout = ({ pageTitle, children }: Props) => {
