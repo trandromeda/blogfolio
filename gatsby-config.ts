@@ -15,6 +15,12 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
+      resolve: `@lekoarts/gatsby-theme-cara`,
+      options: {
+        basePath: "/",
+      },
+    },
+    {
       resolve: "gatsby-source-contentful",
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
