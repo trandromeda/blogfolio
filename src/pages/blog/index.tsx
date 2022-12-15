@@ -3,7 +3,7 @@ import { graphql, Link, PageProps } from "gatsby";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 
-const BlogPage = ({ data }: PageProps<Queries.BlogPageQuery>) => {
+const BlogPage = ({ data, ...props }: PageProps<Queries.BlogPageQuery>) => {
   return (
     <Layout pageTitle="My Blog Posts">
       {data.allMdx.nodes.map((node) => (
