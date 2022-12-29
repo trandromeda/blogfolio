@@ -1,12 +1,13 @@
 import * as React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import { container, title, siteTitle } from "./layout.module.css";
+import { container, title, nav, links } from "./layout.module.css";
 
 type Props = {
   pageTitle?: string | null;
+  hideTitle?: boolean;
   children: React.ReactNode;
 };
-const Layout = ({ pageTitle, children }: Props) => {
+const Layout = ({ pageTitle, hideTitle, children }: Props) => {
   const data = useStaticQuery(graphql`
     query Layout {
       site(siteMetadata: { title: { eq: "My Portfolio" } }) {
@@ -19,9 +20,9 @@ const Layout = ({ pageTitle, children }: Props) => {
   `);
   return (
     <div className={container}>
-      <header className={siteTitle}>{data.site.siteMetadata.title}</header>
-      <nav>
-        <ul>
+      <nav className={nav}>
+        <p>trandromeda.com</p>
+        <ul className={links}>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -34,7 +35,7 @@ const Layout = ({ pageTitle, children }: Props) => {
         </ul>
       </nav>
       <main>
-        <h1 className={title}>{pageTitle}</h1>
+        {!hideTitle && <h1 className={title}>{pageTitle}</h1>}
         {children}
       </main>
     </div>
