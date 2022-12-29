@@ -1,7 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `./env/.env.${process.env.NODE_ENV}`,
 });
 
 const config: GatsbyConfig = {
@@ -14,12 +14,6 @@ const config: GatsbyConfig = {
   // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
-    {
-      resolve: `@lekoarts/gatsby-theme-cara`,
-      options: {
-        basePath: "/",
-      },
-    },
     {
       resolve: "gatsby-source-contentful",
       options: {
