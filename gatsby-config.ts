@@ -27,6 +27,7 @@ const config: GatsbyConfig = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-vanilla-extract",
     "gatsby-plugin-mdx",
+    "gatsby-plugin-tsconfig-paths",
     {
       resolve: "gatsby-source-filesystem",
       options: {
