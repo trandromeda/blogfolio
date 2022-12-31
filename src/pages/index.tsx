@@ -12,17 +12,30 @@ const IndexPage = () => {
 
       <ul className={styles.listStyle}>
         <li>
-          i) a curious and software developer who adds a playful touch to my
-          work, and
+          i) a curious software developer who adds a{" "}
+          <span role="img" aria-label="dog">
+            💖
+          </span>{" "}
+          touch to my work, and
         </li>
         <li>
-          ii) a methodical product designer (:sprout:) with a big imagination.
+          ii) a{" "}
+          <span role="img" aria-label="dog">
+            🌱
+          </span>{" "}
+          UX designer with a big imagination.
         </li>
       </ul>
 
       <p className={styles.bodyStyle}>
         I want to solve big problems affecting people and the planet using
         empathy and ingenuity.
+      </p>
+
+      <p className={styles.asideStyle}>
+        If you've somehow found this place, it's still under construction as I'm
+        porting over years of my old blog posts littered across my hard drive.
+        Please bear with me!
       </p>
     </Layout>
   );

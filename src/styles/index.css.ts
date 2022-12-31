@@ -36,6 +36,14 @@ export const listStyle = style({
   fontSize: 24,
 });
 
+export const asideStyle = style({
+  fontSize: "0.9em",
+  fontStyle: "italic",
+  marginTop: 56,
+  maxWidth: "50%",
+  marginLeft: "auto",
+});
+
 // TODO: Define global vars in createGlobalTheme()
 globalStyle("html, body", {
   vars: {
@@ -44,4 +52,5 @@ globalStyle("html, body", {
     [backgroundColour]: "#F9F5D7",
   },
   backgroundColor: backgroundColour,
+  margin: 0,
 });

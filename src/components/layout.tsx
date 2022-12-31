@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import { container, title, nav, links } from "./layout.module.css";
+import { container, title, nav, links, main } from "./layout.module.css";
 
 type Props = {
   pageTitle?: string | null;
@@ -34,7 +34,7 @@ const Layout = ({ pageTitle, hideTitle, children }: Props) => {
           </li>
         </ul>
       </nav>
-      <main>
+      <main className={main}>
         {!hideTitle && <h1 className={title}>{pageTitle}</h1>}
         {children}
       </main>
