@@ -1,13 +1,16 @@
 import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
+import * as styles from "@styles/index.css";
 
 const IndexPage = () => {
   return (
     <Layout pageTitle="Home Page" hideTitle={true}>
-      <h1> Welcome to my little nook on the web. I am:</h1>
+      <h1 className={styles.titleStyle}>
+        Welcome to my little nook on the web. I am:
+      </h1>
 
-      <ul>
+      <ul className={styles.listStyle}>
         <li>
           i) a curious and software developer who adds a playful touch to my
           work, and
@@ -17,7 +20,7 @@ const IndexPage = () => {
         </li>
       </ul>
 
-      <p>
+      <p className={styles.bodyStyle}>
         I want to solve big problems affecting people and the planet using
         empathy and ingenuity.
       </p>
