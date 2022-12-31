@@ -1,6 +1,6 @@
 .container {
   margin: auto;
-  max-width: 500px;
+  width: 100%;
   font-family: sans-serif;
 }
 
@@ -13,4 +13,22 @@
   color: gray;
   font-weight: 700;
   margin: 3rem 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  padding: 1em;
+}
+
+.links {
+  flex: 0 1 25%;
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.main {
+  padding: 0 4em;
 }

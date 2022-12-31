@@ -1,7 +1,7 @@
 import type { GatsbyConfig } from "gatsby";
 
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `./env/.env.${process.env.NODE_ENV}`,
 });
 
 const config: GatsbyConfig = {
@@ -15,12 +15,6 @@ const config: GatsbyConfig = {
   graphqlTypegen: true,
   plugins: [
     {
-      resolve: `@lekoarts/gatsby-theme-cara`,
-      options: {
-        basePath: "/",
-      },
-    },
-    {
       resolve: "gatsby-source-contentful",
       options: {
         spaceId: process.env.CONTENTFUL_SPACE_ID,
@@ -33,6 +27,7 @@ const config: GatsbyConfig = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-vanilla-extract",
     "gatsby-plugin-mdx",
+    "gatsby-plugin-tsconfig-paths",
     {
       resolve: "gatsby-source-filesystem",
       options: {
