@@ -1,6 +1,13 @@
 import * as React from "react";
 import { Link, useStaticQuery, graphql } from "gatsby";
-import { container, title, nav, links, main } from "./layout.module.css";
+import {
+  container,
+  title,
+  nav,
+  links,
+  main,
+  navTitle,
+} from "./layout.module.css";
 
 type Props = {
   pageTitle?: string | null;
@@ -21,7 +28,7 @@ const Layout = ({ pageTitle, hideTitle, children }: Props) => {
   return (
     <div className={container}>
       <nav className={nav}>
-        <p>trandromeda.com</p>
+        <p className={navTitle}>trandromeda.com</p>
         <ul className={links}>
           <li>
             <Link to="/">Home</Link>

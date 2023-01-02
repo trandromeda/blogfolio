@@ -28,8 +28,8 @@ const IndexPage = () => {
       </ul>
 
       <p className={styles.bodyStyle}>
-        I want to solve big problems affecting people and the planet using
-        empathy and ingenuity.
+        I want to solve big problems affecting people and the planet with
+        ingenuity and care.
       </p>
 
       <p className={styles.asideStyle}>
