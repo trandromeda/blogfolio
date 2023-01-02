@@ -22,6 +22,10 @@
   padding: 1em;
 }
 
+.nav-title {
+  font-weight: 700;
+}
+
 .links {
   flex: 0 1 25%;
   display: flex;
@@ -30,5 +34,5 @@
 }
 
 .main {
-  padding: 0 4em;
+  padding: 0 15%;
 }
