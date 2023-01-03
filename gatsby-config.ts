@@ -43,6 +43,26 @@ const config: GatsbyConfig = {
       },
       __key: "blog",
     },
+    {
+      resolve: `gatsby-omni-font-loader`,
+      options: {
+        enableListener: true,
+        preconnect: [
+          `https://fonts.googleapis.com`,
+          `https://fonts.gstatic.com`,
+        ],
+        web: [
+          {
+            name: `Playfair Display`,
+            file: `https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&display=swap`,
+          },
+          {
+            name: `DM Sans`,
+            file: `https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,700;1,400&display=swap`,
+          },
+        ],
+      },
+    },
   ],
 };
 

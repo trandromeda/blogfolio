@@ -6,7 +6,7 @@ import {
   nav,
   links,
   main,
-  navTitle,
+  navLogo,
 } from "./layout.module.css";
 
 type Props = {
@@ -28,7 +28,7 @@ const Layout = ({ pageTitle, hideTitle, children }: Props) => {
   return (
     <div className={container}>
       <nav className={nav}>
-        <p className={navTitle}>trandromeda.com</p>
+        <p className={navLogo}>trandromeda.com</p>
         <ul className={links}>
           <li>
             <Link to="/">Home</Link>
