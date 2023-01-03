@@ -18,12 +18,15 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: white;
-  padding: 1em;
+  padding: 1em 2em;
 }
 
-.nav-title {
+.nav-logo {
   font-weight: 700;
+  font-size: 1.2em;
+  margin: 0;
 }
 
 .links {

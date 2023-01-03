@@ -30,6 +30,14 @@ globalStyle("html, body", {
   margin: 0,
 });
 
+globalStyle("h1, h2, h3", {
+  fontFamily: "Playfair Display",
+});
+
+globalStyle("li, p", {
+  fontFamily: "DM Sans",
+});
+
 globalStyle(`li > a`, {
   textDecoration: "none",
   color: "black",
@@ -37,17 +45,16 @@ globalStyle(`li > a`, {
 
 export const titleStyle = style({
   color: primaryColour,
-  fontWeight: 700,
-  fontSize: 56,
+  fontWeight: 500,
+  fontSize: 40,
 });
 
 export const bodyStyle = style({
-  fontSize: 24,
-  fontWeight: 700,
+  fontSize: 18,
 });
 
 export const listStyle = style({
-  fontSize: 24,
+  fontSize: 18,
 });
 
 export const asideStyle = style({
