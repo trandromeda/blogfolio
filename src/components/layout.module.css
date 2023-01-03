@@ -29,6 +29,10 @@
   margin: 0;
 }
 
+.nav-title {
+  font-weight: 700;
+}
+
 .links {
   flex: 0 1 25%;
   display: flex;
