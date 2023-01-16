@@ -2,39 +2,42 @@ import * as React from "react";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import * as styles from "@styles/index.css";
+import plantFern from "../images/plant-fern.png";
+import plantLeafy from "../images/plant-leafy.png";
 
 const IndexPage = () => {
   return (
     <Layout pageTitle="Home Page" hideTitle={true}>
-      <h1 className={styles.titleStyle}>
-        Welcome to my little nook on the web. I am:
-      </h1>
+      <div className={styles.wrapperStyle}>
+        <img
+          src={plantFern}
+          alt="Plant background image"
+          className={styles.leftPlantStyle}
+        />
+        <div className={styles.heroStyle}>
+          <p className={styles.heroTextStyle}>Hey, it’s Andy.</p>
 
-      <p className={styles.bodyStyle}>
-        i) a curious software developer who adds a{" "}
-        <span role="img" aria-label="dog">
-          💖
-        </span>{" "}
-        touch to my work, and
-      </p>
-      <p className={styles.bodyStyle}>
-        ii) a{" "}
-        <span role="img" aria-label="dog">
-          🌱
-        </span>{" "}
-        UX designer with a big imagination.
-      </p>
+          <p className={styles.heroTextStyle}>
+            I blog about programming, design, adulthood, games, failed ideas,
+            and general BS. From time to time I’ll share a case study of some UX
+            work I’ve done.
+          </p>
 
-      <p className={styles.bodyStyle}>
-        I want to solve big problems affecting people and the planet with
-        ingenuity and care.
-      </p>
-
-      <p className={styles.bodyStyle}>
-        If you've somehow found this place, it's still under construction as I'm
-        porting over years of my old blog posts littered across my hard drive.
-        Please bear with me!
-      </p>
+          <p className={styles.heroTextStyle}>
+            Right now in life I’m trying to figure out:
+            <ul className={styles.heroListStyle}>
+              <li>the key to having a purposeful career;</li>
+              <li>how to express myself creatively;</li>
+              <li>what my dog is thinking</li>
+            </ul>
+          </p>
+        </div>
+        <img
+          src={plantLeafy}
+          alt="Plant background image"
+          className={styles.rightPlantStyle}
+        />
+      </div>
     </Layout>
   );
 };

@@ -2,6 +2,7 @@
   margin: auto;
   width: 100%;
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 .title {
@@ -42,4 +43,10 @@
 
 .main {
   padding: 0 15%;
+}
+
+@media (max-width: 918px) {
+  .main {
+    padding: 0 5%;
+  }
 }
