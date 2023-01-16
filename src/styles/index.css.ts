@@ -63,11 +63,7 @@ export const heroStyle = style({
   gridTemplateColumns: "repeat(8, 1fr)",
 });
 
-export const heroTextStyle = style({
-  margin: "0.5em 0",
-  fontFamily: "Playfair Display",
-  fontSize: 32,
-  lineHeight: "48px",
+export const heroChild = style({
   selectors: {
     [`${heroStyle} &:first-child`]: {
       color: primaryColour,
@@ -110,8 +106,11 @@ export const heroTextStyle = style({
   },
 });
 
-export const heroListStyle = style({
+export const heroTextStyle = style({
+  margin: "0.5em 0",
   fontFamily: "Playfair Display",
+  fontSize: 32,
+  lineHeight: "48px",
 });
 
 export const leftPlantStyle = style({

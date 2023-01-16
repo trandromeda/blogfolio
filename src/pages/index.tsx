@@ -15,22 +15,27 @@ const IndexPage = () => {
           className={styles.leftPlantStyle}
         />
         <div className={styles.heroStyle}>
-          <p className={styles.heroTextStyle}>Hey, it’s Andy.</p>
+          <p className={`${styles.heroTextStyle} ${styles.heroChild}`}>
+            Hey, it’s Andy.
+          </p>
 
-          <p className={styles.heroTextStyle}>
+          <p className={`${styles.heroTextStyle} ${styles.heroChild}`}>
             I blog about programming, design, adulthood, games, failed ideas,
             and general BS. From time to time I’ll share a case study of some UX
             work I’ve done.
           </p>
 
-          <p className={styles.heroTextStyle}>
-            Right now in life I’m trying to figure out:
-            <ul className={styles.heroListStyle}>
+          <div className={styles.heroChild}>
+            <p className={styles.heroTextStyle}>
+              Right now in life I’m trying to figure out:
+            </p>
+
+            <ul className={styles.heroTextStyle}>
               <li>the key to having a purposeful career;</li>
               <li>how to express myself creatively;</li>
               <li>what my dog is thinking</li>
             </ul>
-          </p>
+          </div>
         </div>
         <img
           src={plantLeafy}
