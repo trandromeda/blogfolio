@@ -24,6 +24,7 @@
     "gatsby-omni-font-loader": "^2.0.2",
     "gatsby-plugin-image": "^3.2.0",
     "gatsby-plugin-mdx": "^5.2.0",
+    "gatsby-plugin-sass": "^6.4.0",
     "gatsby-plugin-sharp": "^5.2.0",
     "gatsby-plugin-vanilla-extract": "^4.0.0",
     "gatsby-source-contentful": "^8.2.0",
@@ -32,6 +33,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
+    "sass": "^1.57.1",
     "typescript-plugin-css-modules": "^4.1.1"
   },
   "devDependencies": {

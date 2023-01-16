@@ -7,7 +7,7 @@ import {
   links,
   main,
   navLogo,
-} from "./layout.module.css";
+} from "./layout.module.scss";
 
 type Props = {
   pageTitle?: string | null;
