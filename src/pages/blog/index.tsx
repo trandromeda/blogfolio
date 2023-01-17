@@ -3,18 +3,16 @@ import { graphql, Link, PageProps } from "gatsby";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
 
-const BlogPage = ({ data, ...props }: PageProps<Queries.BlogPageQuery>) => {
+const BlogPage = ({ data }: PageProps<Queries.ContentfulBlogPostsQuery>) => {
   return (
     <Layout pageTitle="My Blog Posts">
-      {data.allMdx.nodes.map((node) => (
+      {data.allContentfulBlogPost.nodes.map((node) => (
         <article key={node.id}>
           <h2>
-            <Link to={`/blog/${node.frontmatter?.slug}`}>
-              {node.frontmatter?.title}
-            </Link>
+            <Link to={`/blog/${node.slug}`}>{node.title}</Link>
           </h2>
-          <p>Posted: {node.frontmatter?.date}</p>
-          <p>{node.excerpt}</p>
+          <p>Posted: {node.publishDate}</p>
+          <p>{node.description?.description}</p>
         </article>
       ))}
     </Layout>
@@ -22,16 +20,16 @@ const BlogPage = ({ data, ...props }: PageProps<Queries.BlogPageQuery>) => {
 };
 
 export const query = graphql`
-  query BlogPage {
-    allMdx(sort: { frontmatter: { date: DESC } }) {
+  query ContentfulBlogPosts {
+    allContentfulBlogPost(sort: { publishDate: DESC }) {
       nodes {
         id
-        frontmatter {
-          date(formatString: "MMM D, YYYY")
-          slug
-          title
+        description {
+          description
         }
-        excerpt
+        publishDate(formatString: "MMMM DD, YYYY")
+        slug
+        title
       }
     }
   }
