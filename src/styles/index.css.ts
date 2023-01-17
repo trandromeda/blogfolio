@@ -30,6 +30,8 @@ globalStyle("html, body", {
   },
   backgroundColor: backgroundColour,
   margin: 0,
+  width: "100%",
+  height: "100%",
 });
 
 globalStyle("h1, h2, h3", {
