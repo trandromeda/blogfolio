@@ -7,17 +7,22 @@ import { FileNode } from "gatsby-plugin-image/dist/src/components/hooks";
 
 const BlogPost = (props: PageProps<Queries.ContentfulBlogPostQuery>) => {
   /** TS thinks children is undefined but it's clearly not. It should be a React.Element when a page is created by File System Route API  */
-  const { data, children } = props;
-  const { contentfulBlogPost } = data;
+  const {
+    data: { contentfulBlogPost },
+  } = props;
   //   const heroImageNode = data.contentfulBlogPost?.hero_image as FileNode;
   //   const image = getImage(heroImageNode)!;
-  console.log(props);
   return (
     <Layout pageTitle={contentfulBlogPost?.title}>
-      <p>Posted: {contentfulBlogPost?.publishDate}</p>
+      <p>{contentfulBlogPost?.publishDate}</p>
       {/* <GatsbyImage image={image} alt="An image" /> */}
-      {children}
-      {contentfulBlogPost?.description?.description}
+
+      <div
+        className="body"
+        dangerouslySetInnerHTML={{
+          __html: contentfulBlogPost!.body!.childMarkdownRemark!.html!,
+        }}
+      />
     </Layout>
   );
 };
@@ -29,6 +34,9 @@ export const query = graphql`
       title
       body {
         body
+        childMarkdownRemark {
+          html
+        }
       }
       description {
         description

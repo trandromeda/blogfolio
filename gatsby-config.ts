@@ -64,6 +64,10 @@ const config: GatsbyConfig = {
         ],
       },
     },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {},
+    },
   ],
 };
 
