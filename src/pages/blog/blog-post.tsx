@@ -1,17 +1,24 @@
 import * as React from "react";
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Layout from "@components/layout";
-import Seo from "../../components/seo";
-import { FileNode } from "gatsby-plugin-image/dist/src/components/hooks";
+import Seo from "@components/seo";
 
-const BlogPost = (props: PageProps<Queries.ContentfulBlogPostQuery>) => {
-  /** TS thinks children is undefined but it's clearly not. It should be a React.Element when a page is created by File System Route API  */
-  const {
-    data: { contentfulBlogPost },
-  } = props;
+interface Props extends PageProps {
+  pageContext: {
+    id: string;
+    pagePath: string;
+    prev: Queries.ContentfulBlogPost;
+    next: Queries.ContentfulBlogPost;
+  };
+  data: Queries.ContentfulBlogPostQuery;
+}
+
+const BlogPost = (props: Props) => {
+  const { data, pageContext } = props;
   //   const heroImageNode = data.contentfulBlogPost?.hero_image as FileNode;
   //   const image = getImage(heroImageNode)!;
+  const { contentfulBlogPost } = data;
   return (
     <Layout pageTitle={contentfulBlogPost.title}>
       <p>{contentfulBlogPost.publishDate}</p>
@@ -20,16 +27,28 @@ const BlogPost = (props: PageProps<Queries.ContentfulBlogPostQuery>) => {
       <div
         className="body"
         dangerouslySetInnerHTML={{
-          __html: contentfulBlogPost.body.childMarkdownRemark!.html!,
+          __html: contentfulBlogPost.body!.childMarkdownRemark!.html!,
         }}
       />
+
+      {pageContext.next && (
+        <div>
+          <Link to={`/blog/${pageContext.next?.slug}`}>Next</Link>
+        </div>
+      )}
+
+      {pageContext.prev && (
+        <div>
+          <Link to={`/blog/${pageContext.prev?.slug}`}>Previous</Link>
+        </div>
+      )}
     </Layout>
   );
 };
 
 export const query = graphql`
   query ContentfulBlogPost($id: String) {
-    contentfulBlogPost(slug: { eq: $id }) {
+    contentfulBlogPost(id: { eq: $id }) {
       publishDate(formatString: "MMMM DD, YYYY")
       title
       body {
