@@ -1,51 +1,5 @@
-import {
-  createVar,
-  style,
-  globalStyle,
-  createTheme,
-} from "@vanilla-extract/css";
-
-export const primaryColour = createVar();
-export const backgroundColour = createVar();
-export const accentColour = createVar();
-export const blackColour = createVar();
-
-export const [themeClass, vars] = createTheme({
-  color: {
-    brand: "blue",
-    background: "#f9f5d7",
-  },
-  font: {
-    body: "arial",
-  },
-});
-
-// TODO: Define global vars in createGlobalTheme()
-globalStyle("html, body", {
-  vars: {
-    [primaryColour]: "#8F3F71",
-    [accentColour]: "#076678",
-    [backgroundColour]: "#FDFCF8",
-    [blackColour]: "#333333",
-  },
-  backgroundColor: backgroundColour,
-  margin: 0,
-  width: "100%",
-  height: "100%",
-});
-
-globalStyle("h1, h2, h3", {
-  fontFamily: "Playfair Display",
-});
-
-globalStyle("p", {
-  fontFamily: "DM Sans",
-});
-
-globalStyle(`li > a`, {
-  textDecoration: "none",
-  color: "black",
-});
+import { style } from "@vanilla-extract/css";
+import { globalVars } from "./globals.css";
 
 export const wrapperStyle = style({
   position: "relative",
@@ -68,18 +22,18 @@ export const heroStyle = style({
 export const heroChild = style({
   selectors: {
     [`${heroStyle} &:first-child`]: {
-      color: primaryColour,
+      color: globalVars.colour.primary,
       gridColumn: "1 / span 3",
       gridRow: "1 / 2",
     },
 
     [`${heroStyle} &:nth-child(2)`]: {
-      color: accentColour,
+      color: globalVars.colour.accent,
       gridColumn: "2 / span 6",
       gridRow: "2 / 3",
     },
     [`${heroStyle} &:nth-child(3)`]: {
-      color: blackColour,
+      color: globalVars.colour.black,
       gridColumn: "3 / span 6",
       gridRow: "3 / 4",
     },
@@ -88,18 +42,18 @@ export const heroChild = style({
     "screen and (max-width: 918px)": {
       selectors: {
         [`${heroStyle} &:first-child`]: {
-          color: primaryColour,
+          color: globalVars.colour.primary,
           gridColumn: "1 / span 8",
           gridRow: "1 / 2",
         },
 
         [`${heroStyle} &:nth-child(2)`]: {
-          color: accentColour,
+          color: globalVars.colour.accent,
           gridColumn: "1 / span 8",
           gridRow: "2 / 3",
         },
         [`${heroStyle} &:nth-child(3)`]: {
-          color: blackColour,
+          color: globalVars.colour.black,
           gridColumn: "1 / span 8",
           gridRow: "3 / 4",
         },
@@ -110,12 +64,17 @@ export const heroChild = style({
 
 export const heroTextStyle = style({
   margin: "0.5em 0",
-  fontFamily: "Playfair Display",
-  fontSize: 32,
-  lineHeight: "48px",
+  zIndex: 2,
+});
+
+export const heroListStyle = style({
+  fontSize: globalVars.size.subheading,
+  fontFamily: globalVars.font.subheading,
+  lineHeight: globalVars.lineHeight.subheading,
 });
 
 export const leftPlantStyle = style({
+  zIndex: 1,
   position: "absolute",
   left: "-25%",
   top: "14%",
@@ -127,6 +86,7 @@ export const leftPlantStyle = style({
 });
 
 export const rightPlantStyle = style({
+  zIndex: 1,
   position: "absolute",
   right: "-23%",
   top: "10%",

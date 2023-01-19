@@ -1,5 +1,5 @@
 import * as React from "react";
-import Layout from "../components/layout";
+import Layout from "@components/layout";
 import Seo from "../components/seo";
 import * as styles from "@styles/index.css";
 import plantFern from "../images/plant-fern.png";
@@ -15,22 +15,22 @@ const IndexPage = () => {
           className={styles.leftPlantStyle}
         />
         <div className={styles.heroStyle}>
-          <p className={`${styles.heroTextStyle} ${styles.heroChild}`}>
+          <h1 className={`${styles.heroTextStyle} ${styles.heroChild}`}>
             Hey, it’s Andy.
-          </p>
+          </h1>
 
-          <p className={`${styles.heroTextStyle} ${styles.heroChild}`}>
+          <h2 className={`${styles.heroTextStyle} ${styles.heroChild}`}>
             I blog about programming, design, adulthood, games, failed ideas,
             and general BS. From time to time I’ll share a case study of some UX
             work I’ve done.
-          </p>
+          </h2>
 
           <div className={styles.heroChild}>
-            <p className={styles.heroTextStyle}>
+            <h2 className={styles.heroTextStyle}>
               Right now in life I’m trying to figure out:
-            </p>
+            </h2>
 
-            <ul className={styles.heroTextStyle}>
+            <ul className={styles.heroListStyle}>
               <li>the key to having a purposeful career;</li>
               <li>how to express myself creatively;</li>
               <li>what my dog is thinking</li>

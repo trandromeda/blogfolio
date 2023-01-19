@@ -36,14 +36,14 @@ const config: GatsbyConfig = {
       },
       __key: "images",
     },
-    {
-      resolve: "gatsby-source-filesystem",
-      options: {
-        name: "blog",
-        path: `${__dirname}/src/blog/`,
-      },
-      __key: "blog",
-    },
+    // {
+    //   resolve: "gatsby-source-filesystem",
+    //   options: {
+    //     name: "blog",
+    //     path: `${__dirname}/src/blog/`,
+    //   },
+    //   __key: "blog",
+    // },
     {
       resolve: `gatsby-omni-font-loader`,
       options: {
