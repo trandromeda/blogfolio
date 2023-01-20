@@ -1,8 +1,12 @@
 import * as React from "react";
 import { graphql, Link, PageProps } from "gatsby";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
+// import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
+
 import Layout from "@components/layout";
 import Seo from "@components/seo";
+import * as styles from "./blog.css";
 
 interface Props extends PageProps {
   pageContext: {
@@ -16,12 +20,14 @@ interface Props extends PageProps {
 
 const BlogPost = (props: Props) => {
   const { data, pageContext } = props;
+  const { contentfulBlogPost } = data;
   //   const heroImageNode = data.contentfulBlogPost?.hero_image as FileNode;
   //   const image = getImage(heroImageNode)!;
-  const { contentfulBlogPost } = data;
+
   return (
-    <Layout pageTitle={contentfulBlogPost.title}>
-      <p>{contentfulBlogPost.publishDate}</p>
+    <Layout>
+      <h1 className={styles.title}>{contentfulBlogPost.title}</h1>
+      <p className={styles.date}>{contentfulBlogPost.publishDate}</p>
       {/* <GatsbyImage image={image} alt="An image" /> */}
 
       <div
@@ -31,17 +37,25 @@ const BlogPost = (props: Props) => {
         }}
       />
 
-      {pageContext.next && (
-        <div>
-          <Link to={`/blog/${pageContext.next?.slug}`}>Next</Link>
-        </div>
-      )}
+      <div className={styles.nav}>
+        {pageContext.next && (
+          <div className={styles.left}>
+            <Link to={`/blog/${pageContext.next?.slug}`}>
+              <FaArrowLeft></FaArrowLeft>
+              {pageContext.next?.title}
+            </Link>
+          </div>
+        )}
 
-      {pageContext.prev && (
-        <div>
-          <Link to={`/blog/${pageContext.prev?.slug}`}>Previous</Link>
-        </div>
-      )}
+        {pageContext.prev && (
+          <div className={styles.right}>
+            <Link to={`/blog/${pageContext.prev?.slug}`}>
+              {pageContext.prev?.title}
+              <FaArrowRight></FaArrowRight>
+            </Link>
+          </div>
+        )}
+      </div>
     </Layout>
   );
 };
@@ -56,9 +70,6 @@ export const query = graphql`
         childMarkdownRemark {
           html
         }
-      }
-      description {
-        description
       }
     }
   }

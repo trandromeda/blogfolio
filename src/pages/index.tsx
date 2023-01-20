@@ -1,13 +1,13 @@
 import * as React from "react";
 import Layout from "@components/layout";
 import Seo from "../components/seo";
-import * as styles from "@styles/index.css";
+import * as styles from "./index.css";
 import plantFern from "../images/plant-fern.png";
 import plantLeafy from "../images/plant-leafy.png";
 
 const IndexPage = () => {
   return (
-    <Layout pageTitle="Home Page" hideTitle={true}>
+    <Layout>
       <div className={styles.wrapperStyle}>
         <img
           src={plantFern}

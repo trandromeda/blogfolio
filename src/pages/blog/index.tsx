@@ -5,7 +5,8 @@ import Seo from "../../components/seo";
 
 const BlogPage = ({ data }: PageProps<Queries.ContentfulBlogPostsQuery>) => {
   return (
-    <Layout pageTitle="My Blog Posts">
+    <Layout>
+      <h1>Blog</h1>
       {data.allContentfulBlogPost.nodes.map((node) => (
         <article key={node.id}>
           <h2>

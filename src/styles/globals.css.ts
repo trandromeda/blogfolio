@@ -46,7 +46,7 @@ globalStyle("h2", {
   fontWeight: 400,
 });
 
-globalStyle("p", {
+globalStyle("p, a", {
   fontFamily: globalVars.font.body,
   fontSize: globalVars.size.body,
   lineHeight: globalVars.lineHeight.body,

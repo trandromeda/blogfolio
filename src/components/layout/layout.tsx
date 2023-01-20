@@ -1,50 +1,30 @@
 import * as React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
-import {
-  container,
-  title,
-  nav,
-  links,
-  main,
-  navLogo,
-} from "./layout.module.scss";
+import { Link } from "gatsby";
+import * as styles from "./layout.css";
 
 type Props = {
-  pageTitle?: string | null;
-  hideTitle?: boolean;
   children: React.ReactNode;
 };
-const Layout = ({ pageTitle, hideTitle, children }: Props) => {
-  const data = useStaticQuery(graphql`
-    query Layout {
-      site(siteMetadata: { title: { eq: "My Portfolio" } }) {
-        siteMetadata {
-          description
-          title
-        }
-      }
-    }
-  `);
+const Layout = ({ children }: Props) => {
   return (
-    <div className={container}>
-      <nav className={nav}>
-        <p className={navLogo}>trandromeda.com</p>
-        <ul className={links}>
-          <li>
+    <div className={styles.container}>
+      <nav className={styles.nav}>
+        <ul>
+          <li className={styles.link}>
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className={styles.link}>
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className={styles.link}>
             <Link to="/blog">Blog</Link>
+          </li>
+          <li className={styles.link}>
+            <Link to="/portfolio">Portfolio</Link>
           </li>
         </ul>
       </nav>
-      <main className={main}>
-        {!hideTitle && <h1 className={title}>{pageTitle}</h1>}
-        {children}
-      </main>
+      <main className={styles.content}>{children}</main>
     </div>
   );
 };

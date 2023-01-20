@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { globalVars } from "./globals.css";
+import { globalVars } from "@styles/globals.css";
 
 export const wrapperStyle = style({
   position: "relative",
@@ -13,13 +13,13 @@ export const wrapperStyle = style({
 
 export const heroStyle = style({
   position: "relative",
-  padding: "2em 1em",
   display: "grid",
   gridTemplateRows: "fit-content(30%)",
   gridTemplateColumns: "repeat(8, 1fr)",
 });
 
 export const heroChild = style({
+  zIndex: 2,
   selectors: {
     [`${heroStyle} &:first-child`]: {
       color: globalVars.colour.primary,
@@ -63,14 +63,14 @@ export const heroChild = style({
 });
 
 export const heroTextStyle = style({
-  margin: "0.5em 0",
-  zIndex: 2,
+  marginBottom: 0,
 });
 
 export const heroListStyle = style({
   fontSize: globalVars.size.subheading,
   fontFamily: globalVars.font.subheading,
   lineHeight: globalVars.lineHeight.subheading,
+  marginTop: "0.5em",
 });
 
 export const leftPlantStyle = style({
