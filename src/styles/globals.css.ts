@@ -46,13 +46,16 @@ globalStyle("h2", {
   fontWeight: 400,
 });
 
-globalStyle("p, a", {
+globalStyle("p", {
   fontFamily: globalVars.font.body,
   fontSize: globalVars.size.body,
   lineHeight: globalVars.lineHeight.body,
 });
 
-globalStyle(`li > a`, {
+globalStyle("a", {
   textDecoration: "none",
+});
+
+globalStyle(`li > a`, {
   color: "black",
 });

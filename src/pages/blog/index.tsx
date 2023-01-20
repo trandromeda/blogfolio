@@ -2,11 +2,12 @@ import * as React from "react";
 import { graphql, Link, PageProps } from "gatsby";
 import Layout from "../../components/layout";
 import Seo from "../../components/seo";
+import * as styles from "@styles/blog.css";
 
 const BlogPage = ({ data }: PageProps<Queries.ContentfulBlogPostsQuery>) => {
   return (
     <Layout>
-      <h1>Blog</h1>
+      <h1 className={styles.title}>Blog</h1>
       {data.allContentfulBlogPost.nodes.map((node) => (
         <article key={node.id}>
           <h2>
