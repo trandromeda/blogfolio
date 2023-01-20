@@ -6,7 +6,7 @@ import { FaArrowLeft } from "react-icons/fa";
 
 import Layout from "@components/layout";
 import Seo from "@components/seo";
-import * as styles from "./blog.css";
+import * as styles from "@styles/blog.css";
 
 interface Props extends PageProps {
   pageContext: {

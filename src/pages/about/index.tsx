@@ -1,6 +1,6 @@
 import * as React from "react";
 import Layout from "@components/layout";
-import * as styles from "./about.css";
+import * as styles from "@styles/about.css";
 
 const AboutPage = () => {
   return (

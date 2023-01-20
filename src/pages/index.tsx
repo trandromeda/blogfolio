@@ -1,7 +1,7 @@
 import * as React from "react";
 import Layout from "@components/layout";
 import Seo from "../components/seo";
-import * as styles from "./index.css";
+import * as styles from "@styles/index.css";
 import plantFern from "../images/plant-fern.png";
 import plantLeafy from "../images/plant-leafy.png";
 
