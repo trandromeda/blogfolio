@@ -1,6 +1,7 @@
-import { createGlobalTheme, globalStyle } from "@vanilla-extract/css";
+import { createTheme, globalStyle } from "@vanilla-extract/css";
 
-export const globalVars = createGlobalTheme(":root", {
+// TODO: colour can be in its own scoped theme, the rest global
+export const [themeClass, globalVars] = createTheme({
   colour: {
     primary: "#8F3F71",
     accent: "#076678",
@@ -25,7 +26,6 @@ export const globalVars = createGlobalTheme(":root", {
 });
 
 globalStyle("html, body", {
-  backgroundColor: globalVars.colour.background,
   margin: 0,
   width: "100%",
   height: "100%",

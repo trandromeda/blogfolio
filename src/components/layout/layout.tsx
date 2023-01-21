@@ -8,7 +8,7 @@ type Props = {
 };
 const Layout = ({ children }: Props) => {
   return (
-    <div className={`${styles.container}`}>
+    <div className={`${globalStyles.themeClass} ${styles.container}`}>
       <nav className={styles.nav}>
         <ul>
           <li className={styles.link}>

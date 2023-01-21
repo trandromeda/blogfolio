@@ -2,6 +2,7 @@ import { globalStyle, style } from "@vanilla-extract/css";
 import { globalVars } from "@styles/globals.css";
 
 export const container = style({
+  backgroundColor: globalVars.colour.background,
   position: "relative",
   margin: "auto",
   width: "100%",
@@ -16,7 +17,9 @@ export const container = style({
 });
 
 export const content = style({
+  maxWidth: "960px",
   padding: "2em 16%",
+  margin: "0 auto",
   "@media": {
     "screen and (max-width: 918px)": {
       padding: "1em 5%",
@@ -26,7 +29,7 @@ export const content = style({
 
 export const nav = style({
   display: "flex",
-  justifyContent: "flex-end",
+  justifyContent: "center",
   alignItems: "center",
   backgroundColor: "white",
   padding: "0 2em",
