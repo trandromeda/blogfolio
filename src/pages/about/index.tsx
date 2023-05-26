@@ -7,7 +7,7 @@ const AboutPage = () => {
     <Layout>
       <div className={styles.about}>
         <h1 className={styles.title}>About me</h1>
-        <p>My name is Andy and I currently live in Toronto, Canada.</p>
+        <p>My name is Andy and I currently live in Canada.</p>
 
         <p>
           I’m a lifelong gamer; I’m a sucker for good world building or
@@ -23,6 +23,18 @@ const AboutPage = () => {
           Thanks to a caring and patient partner, I’ve stopped trying to predict
           my future and just enjoy life day-by-day; however, my dreams and
           ambitions still guide my decisions.
+        </p>
+
+        <p>
+          I'm a programmer by profession and recently attended the{" "}
+          <a
+            href="https://publish.obsidian.md/trandromeda/Blog/RC+End+of+batch"
+            target="blank"
+          >
+            Recurse Center
+          </a>
+          , which completely changed and reaffirmed how I feel about being in
+          this field.
         </p>
       </div>
     </Layout>
