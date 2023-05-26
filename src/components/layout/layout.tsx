@@ -18,10 +18,12 @@ const Layout = ({ children }: Props) => {
             <Link to="/about">About</Link>
           </li>
           <li className={styles.link}>
-            <Link to="/blog">Blog</Link>
+            <Link to="https://publish.obsidian.md/trandromeda/Blog/_Blog+Index">
+              Blog
+            </Link>
           </li>
           <li className={styles.link}>
-            <Link to="/portfolio">Portfolio</Link>
+            <Link to="/portfolio">Other writings</Link>
           </li>
         </ul>
       </nav>

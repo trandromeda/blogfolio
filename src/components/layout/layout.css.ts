@@ -36,7 +36,7 @@ export const nav = style({
 });
 
 globalStyle(`${nav} > ul`, {
-  flex: "0 1 25%",
+  flex: "0 1 75%",
   display: "flex",
   justifyContent: "space-between",
   listStyleType: "none",
